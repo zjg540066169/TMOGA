@@ -1,0 +1,1 @@
+./bench_expand -N 1000 -s 5 -k 8 -maxk 15 -muw 0.2 -minc 24 -maxc 35 -p 0.2  -expand 3 -contract 3 -r 0.25
