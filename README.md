@@ -38,7 +38,7 @@ Some classic datasets of dynamic community detection problems are included in th
    </tr>
    <tr>
       <td style="text-align:center" colspan="1" rowspan="4">SYN-EVENT</td>
-      <td style="text-align:center" width="13%">Birth and Death</td>
+      <td style="text-align:center" width="40%">Birth and Death</td>
       <td rowspan="4">Greene, D., Doyle, D., & Cunningham, P. (2010, August). Tracking the evolution of communities in dynamic social networks. In 2010 international conference on advances in social networks analysis and mining (pp. 176-183). IEEE.</td>
    
    <tr>
