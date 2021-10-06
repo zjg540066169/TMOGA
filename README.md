@@ -26,7 +26,7 @@ Some classic datasets of dynamic community detection problems are included in th
 <table>
    <tr>
       <th  colspan="3">dataset</th>
-      <th width="80%" >source</th>
+      <th width="60%" >source</th>
    </tr>
    <tr>
       <td style="text-align:center" width="12%" rowspan="6" colspan="1">Synthetic datasets</td>
