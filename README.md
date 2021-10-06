@@ -65,7 +65,7 @@ We list some datasets in common research above, and we can run command at the ro
 
 `python3 ./main.py output -d dataset -g generation -p population  --CID cid  --Md md --Tp tp --Cp cp --Mp mp`
 
-* output is directory that community files should save. Required.
+* output is directory that community files should be saved. Required.
 * -d specifies running dataset. Value can be one of (*synfix3, synfix6, synvar3, synvar6, birth_death, expansion_contraction, intermittent, merge_split, mobile_phone_call*). Default value is *synfix3*.
 * -g specifies number of generations. Value should be positive integer. Default value is 100.
 * -p specifies population size. Value should be positive integer. Default value is 200.
