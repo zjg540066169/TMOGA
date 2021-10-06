@@ -121,9 +121,10 @@ if __name__ == '__main__':
     
     print("Evaluation:")
     modularity = list(map(lambda x:round(evaluation.Modularity(g[x], pop_solutions_tmoga[x]), 3), range(len(g))))
-    NMI = (list(map(lambda x:round(evaluation.NMI_with_Truth(label[x], pop_solutions_tmoga[x], locus = True), 3), range(len(g)))))
+    
     print("Modularity for each snapshot:", modularity)
     if args.dataset != "mobile_phone_call":
+        NMI = (list(map(lambda x:round(evaluation.NMI_with_Truth(label[x], pop_solutions_tmoga[x], locus = True), 3), range(len(g)))))
         print("NMI for each snapshot:", NMI)
     
     
