@@ -61,11 +61,11 @@ Some classic datasets of dynamic community detection problems are included in th
 It is worthwhile to note, the generating tool for SYN-EVENT datasets can be found at http://mlg.ucd.ie/dynamic/. The parameters for each dataset can found at such path: ./dataset/SYNEVENT/*/generation_parameters.txt.
 
 ## Usage
-We list some datasets in common research above, and we can run command at the root directory to test TMOGA on these dataset:
+We list some datasets in common research above, and we can run command at the root directory to test TMOGA:
 
 `python3 ./main.py -d dataset -g generation -p population  --CID cid  --Md md --Tp tp --Cp cp --Mp mp`
 
-* -d specifies running dataset. Value can be one of (*synfix3, synfix6, synvar3, synvar6, birth_death, expansion_contraction, intermittent, merge_split, mobile_phone_call*). Default is *synfix3*.
+* -d specifies running dataset. Value can be one of (*synfix3, synfix6, synvar3, synvar6, birth_death, expansion_contraction, intermittent, merge_split, mobile_phone_call*). Default value is *synfix3*.
 * -g specifies number of generations. Value should be positive integer. Default value is 100.
 * -p specifies population size. Value should be positive integer. Default value is 200.
 * --CID specifies the CID threshold. Value should be in [0, 1]. Default value is 0.8.
@@ -73,3 +73,7 @@ We list some datasets in common research above, and we can run command at the ro
 * --Tp specifies transfer probability. Value should be in [0, 1]. Default value is 0.5.
 * --Cp specifies crossover probability. Value should be in [0, 1]. Default value is 0.8.
 * --Mp specifies mutation probability. Value should be in [0, 1]. Default value is 0.2.
+
+An example can be:
+
+`python3 ./main.py -d synfix6 -g 20 -p 20  --CID 0.5  --Md 5 --Tp 0.5 --Cp 0.5 --Mp 0.2`
