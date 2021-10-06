@@ -29,9 +29,13 @@ Some classic datasets of dynamic community detection problems are included in th
       <th width="40%" >source</th>
    </tr>
    <tr>
-      <td style="text-align:center" width="25%" rowspan="6" colspan="1">Synthetic datasets</td>
-      <td style="text-align:center" width="13%" colspan="2">SYN-FIX</td>
+      <td style="text-align:center" width="25%" rowspan="8" colspan="1">Synthetic datasets</td>
+      <td style="text-align:center" width="13%" colspan="2" rowspan="2">SYN-FIX</td>
+      <td style="text-align:center" width="30%">Z = 3</td>
       <td rowspan="2" >Kim, M. S., & Han, J. (2009). A particle-and-density based evolutionary clustering method for dynamic networks. Proceedings of the VLDB Endowment, 2(1), 622-633.</td>
+   </tr>
+   <tr>
+    <td style="text-align:center" width="30%">Z = 6</td>
    </tr>
    <tr>
       <td style="text-align:center" colspan="2">SYN-VAR</td>
