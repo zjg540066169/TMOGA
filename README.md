@@ -29,7 +29,7 @@ Some classic datasets of dynamic community detection problems are included in th
       <th width="80%" >source</th>
    </tr>
    <tr>
-      <td style="text-align:center" width="12%" rowspan="6" colspan="1">synthetic datasets</td>
+      <td style="text-align:center" width="12%" rowspan="6" colspan="1">Synthetic datasets</td>
       <td style="text-align:center" width="13%" colspan="2">SYN-FIX</td>
       <td rowspan="2" >Kim, M. S., & Han, J. (2009). A particle-and-density based evolutionary clustering method for dynamic networks. Proceedings of the VLDB Endowment, 2(1), 622-633.</td>
    </tr>
@@ -52,8 +52,8 @@ Some classic datasets of dynamic community detection problems are included in th
    </tr>
 </tr>
    <tr>
-      <td style="text-align:center" rowspan="2" >Real-world datasets</td>
-      <td style="text-align:center" >Cellphone Calls</td>
+      <td style="text-align:center" rowspan="1" >Real-world datasets</td>
+      <td style="text-align:center" colspan="2" >Mobile Phone Communication Network</td>
       <td>http://visualdata.wustl.edu/varepository</td>
    </tr>
 </table>
