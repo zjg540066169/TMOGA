@@ -59,3 +59,10 @@ Some classic datasets of dynamic community detection problems are included in th
 </table>
 
 It is worthwhile to note, the generating tool for SYN-EVENT datasets can be found at http://mlg.ucd.ie/dynamic/. The parameters for each dataset can found at such path: ./dataset/SYNEVENT/*/generation_parameters.txt.
+
+## Usage
+We list some datasets in common research above, and we can run command at the root directory to test TMOGA on these dataset:
+
+`python3 ./main.py -d dataset -g generation -p population  --CID cid  --Md md --Tp tp --Cp cp --Mp mp`
+
+* -d specifies running dataset. Value can be one of (*synfix3, synfix6, synvar3, synvar6, birth_death, expansion_contraction, intermittent, merge_split, mobile_phone_call*).
