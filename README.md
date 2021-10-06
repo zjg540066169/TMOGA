@@ -25,29 +25,29 @@ Some classic datasets of dynamic community detection problems are included in th
 
 <table>
    <tr>
-      <th  colspan="2">Dataset</th>
-      <th width="80%" >Source</th>
+      <th  colspan="3">dataset</th>
+      <th width="80%" >source</th>
    </tr>
    <tr>
-      <td style="text-align:center" width="12%" rowspan="3" >Synthetic datasets</td>
-      <td style="text-align:center" width="13%" >SYN-FIX</td>
-      <td rowspan="2" >M.-S. Kim and J. Han, “A particle-and-density based evolutionary clustering method for dynamic networks,” Proc. VLDB Endow., vol. 2, no. 1, pp. 622–633, 2009.</td>
+      <td style="text-align:center" width="12%" rowspan="3" colspan="1">synthetic datasets</td>
+      <td style="text-align:center" width="13%" colspan="2">SYN-FIX</td>
+      <td rowspan="2" >Kim, M. S., & Han, J. (2009). A particle-and-density based evolutionary clustering method for dynamic networks. Proceedings of the VLDB Endowment, 2(1), 622-633.</td>
    </tr>
    <tr>
-      <td style="text-align:center" >SYN-VAR</td>
+      <td style="text-align:center" colspan="2">SYN-VAR</td>
    </tr>
    <tr>
-      <td style="text-align:center">SYN-EVENT</td>
-      <td>D. Greene, D. Doyle, and P. Cunningham, “Tracking the evolution of communities in dynamic social networks,” in Proc. Int. Conf. Adv. Soc. Netw. Anal. Min. (ASONAM), pp. 176–183, 2010.</td>
+      <td style="text-align:center" colspan="1" rowspan="4">SYN-EVENT</td>
+      <td style="text-align:center" width="13%" colspan="1">Birth and Death</td>
+      <td style="text-align:center" width="13%" colspan="1">Expansion and Contraction</td>
+      <td style="text-align:center" width="13%" colspan="1">Intermittent Communities</td>
+      <td style="text-align:center" width="13%" colspan="1">Merge and Split</td>
+      <td>Greene, D., Doyle, D., & Cunningham, P. (2010, August). Tracking the evolution of communities in dynamic social networks. In 2010 international conference on advances in social networks analysis and mining (pp. 176-183). IEEE.</td>
    </tr>
    <tr>
       <td style="text-align:center" rowspan="2" >Real-world datasets</td>
       <td style="text-align:center" >Cellphone Calls</td>
-      <td>http://www.cs.umd.edu/hcil/VASTchallenge08/</td>
-   </tr>
-   <tr>
-      <td style="text-align:center" >Enron Mail</td>
-      <td>http://www.cs.cmu.edu/~enron/</td>
+      <td>http://visualdata.wustl.edu/varepository</td>
    </tr>
 </table>
 
