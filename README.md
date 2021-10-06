@@ -52,7 +52,7 @@ Some classic datasets of dynamic community detection problems are included in th
    </tr>
 </tr>
    <tr>
-      <td style="text-align:center" rowspan="1" >Real-world datasets</td>
+      <td style="text-align:center" rowspan="1" >Real-world dataset</td>
       <td style="text-align:center" colspan="2" >Mobile Phone Communication Network</td>
       <td>http://visualdata.wustl.edu/varepository</td>
    </tr>
