@@ -58,3 +58,4 @@ Some classic datasets of dynamic community detection problems are included in th
    </tr>
 </table>
 
+It is worthwhile to note, the generating tool for SYN-EVENT datasets can be found at http://mlg.ucd.ie/dynamic/. The parameters for each dataset can found at such path: ./dataset/SYNEVENT/*/generation_parameters.txt.
