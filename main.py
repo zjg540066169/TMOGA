@@ -38,6 +38,7 @@ if __name__ == '__main__':
     parser.add_argument("--Tp", help = "indicate the transfer probability", type = float, default = 0.5)
     parser.add_argument("--Cp", help = "indicate the crossover probability", type = float, default = 0.8)
     parser.add_argument("--Mp", help = "indicate the mutation probability", type = float, default = 0.2)
+    parser.add_argument("output", help = "indicate the directory of output", type = str)
 
     args = parser.parse_args()
     
@@ -100,6 +101,7 @@ if __name__ == '__main__':
     crossover_prob = args.Cp
     transfer_prob = args.Tp
     max_num_cliques = args.Md
+    directory = output
     
     print("Parameters:")
     print("Population size:", pop_size)
@@ -126,5 +128,9 @@ if __name__ == '__main__':
     if args.dataset != "mobile_phone_call":
         NMI = (list(map(lambda x:round(evaluation.NMI_with_Truth(label[x], pop_solutions_tmoga[x], locus = True), 3), range(len(g)))))
         print("NMI for each snapshot:", NMI)
+    print()    
+    
+    print("The solutions are saved at: " + directory + "/")
+    write_locus(pop_solutions_tmoga, directory)
     
     

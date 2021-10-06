@@ -10,6 +10,7 @@ import numpy as np
 import networkx as nx
 import os
 import pandas as pd
+from utils.evaluation import evaluation
 def syntetic_read_edgelist(filename,weighted = False, return_graph = False, start = 0):
     idmap = set()
     edge_cache = {}
@@ -156,6 +157,17 @@ def syntetic_event_dynamic_graph(directory, truth = True, start = 1):
     if truth:
         return dynamic_graphs, truth_label
     return dynamic_graphs
+
+
+def write_locus(pop_solutions_tmoga, directory):
+    for i in range(len(pop_solutions_tmoga)):
+        path = directory  + "/" + str(i)
+        node_community = evaluation.community_nodes_to_node_community(evaluation.parse_locus_solution(pop_solutions_tmoga[i]))
+        sorted_answer = sorted(node_community.items(), key = lambda x:x[0])
+        with open(path, "w") as f:
+            for line in sorted_answer:
+                f.write(str(line[0]) + " " + str(line[1]) + "\n")
+    
 
 if __name__ == "__main__":
     a, c = syntetic_event_dynamic_graph("../dataset/syntetic_event/intermittent", start = 1)
