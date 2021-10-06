@@ -30,6 +30,7 @@ if __name__ == '__main__':
     # parse parameters
     parser = argparse.ArgumentParser(description='Run TMOGA on some datasets')
     
+    parser.add_argument("output", help = "indicate the directory of output", type = str)
     parser.add_argument("-d", "--dataset", help = "specify which the dataset to use", default = "synfix3", choices = ["synfix3", "synfix6", "synvar3", "synvar6", "birth_death", "expansion_contraction", "intermittent", "merge_split", "mobile_phone_call"])
     parser.add_argument("-g", "--generation", help = "indicate the number of generations on each snapshot", type = int, default = 100)
     parser.add_argument("-p", "--population", help = "indicate the size of population", type = int, default = 200)
@@ -38,7 +39,7 @@ if __name__ == '__main__':
     parser.add_argument("--Tp", help = "indicate the transfer probability", type = float, default = 0.5)
     parser.add_argument("--Cp", help = "indicate the crossover probability", type = float, default = 0.8)
     parser.add_argument("--Mp", help = "indicate the mutation probability", type = float, default = 0.2)
-    parser.add_argument("output", help = "indicate the directory of output", type = str)
+    
 
     args = parser.parse_args()
     
@@ -101,7 +102,7 @@ if __name__ == '__main__':
     crossover_prob = args.Cp
     transfer_prob = args.Tp
     max_num_cliques = args.Md
-    directory = output
+    directory = args.output
     
     print("Parameters:")
     print("Population size:", pop_size)
