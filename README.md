@@ -38,7 +38,7 @@ Some classic datasets of dynamic community detection problems are included in th
     <td style="text-align:center" width="30%" colspan="1">Z = 6</td>
    </tr>
    <tr>
-      <td style="text-align:center" colspan="1">SYN-VAR</td>
+      <td style="text-align:center" colspan="1" rowspan="2">SYN-VAR</td>
       <td style="text-align:center" width="30%" colspan="1">Z = 3</td>
    </tr>
    <tr>
