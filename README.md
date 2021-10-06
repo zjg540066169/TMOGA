@@ -65,4 +65,11 @@ We list some datasets in common research above, and we can run command at the ro
 
 `python3 ./main.py -d dataset -g generation -p population  --CID cid  --Md md --Tp tp --Cp cp --Mp mp`
 
-* -d specifies running dataset. Value can be one of (*synfix3, synfix6, synvar3, synvar6, birth_death, expansion_contraction, intermittent, merge_split, mobile_phone_call*).
+* -d specifies running dataset. Value can be one of (*synfix3, synfix6, synvar3, synvar6, birth_death, expansion_contraction, intermittent, merge_split, mobile_phone_call*). Default is *synfix3*.
+* -g specifies number of generations. Value should be positive integer. Default value is 100.
+* -p specifies population size. Value should be positive integer. Default value is 200.
+* --CID specifies the CID threshold. Value should be in [0, 1]. Default value is 0.8.
+* --Md specifies the max depth of search tree. Value should be small positive integer. Default value is 5.
+* --Tp specifies transfer probability. Value should be in [0, 1]. Default value is 0.5.
+* --Cp specifies crossover probability. Value should be in [0, 1]. Default value is 0.8.
+* --Mp specifies mutation probability. Value should be in [0, 1]. Default value is 0.2.

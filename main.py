@@ -36,7 +36,7 @@ if __name__ == '__main__':
     parser.add_argument("--CID", help = "indicate the CID threshold", type = float, default = 0.8)
     parser.add_argument("--Md", help = "indicate the max depth of search tree", type = int, default = 5)
     parser.add_argument("--Tp", help = "indicate the transfer probability", type = float, default = 0.5)
-    parser.add_argument("--Cp", help = "indicate the crosspver probability", type = float, default = 0.8)
+    parser.add_argument("--Cp", help = "indicate the crossover probability", type = float, default = 0.8)
     parser.add_argument("--Mp", help = "indicate the mutation probability", type = float, default = 0.2)
 
     args = parser.parse_args()
