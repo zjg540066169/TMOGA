@@ -77,3 +77,7 @@ We list some datasets in common research above, and we can run command at the ro
 An example can be:
 
 `python3 ./main.py -d synfix6 -g 20 -p 20  --CID 0.5  --Md 5 --Tp 0.5 --Cp 0.5 --Mp 0.2`
+
+## Disclaimer
+
+If you find there is any bug, please contact me: jungang.zou@gmail.com.
