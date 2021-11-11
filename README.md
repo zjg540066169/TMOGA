@@ -10,6 +10,7 @@ For more details on the algorithm and its applications, please consult the follo
 ## Installation
 
 You can install this package from pip with
+
 `pip install tmoga`
 
 
