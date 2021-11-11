@@ -113,13 +113,25 @@ After installation from pip, we can import TMOGA algorithm and some evaluation f
 * first_round_generation(default None): the number of generations specified for the first network snapshot. Since TMOGA applies the ordinary NSGA-II framework without feature transfer mechanism at the first snapshot, we can specify more generations for the first network.
 * sde(default False): whether to use Shift-based Density Estimation Method to calculate crowding distance in NSGA-II (introduced in M. Li, S. Yang, X. Liu, Shift-based density estimation for pareto-based algorithms in manyobjective optimization, IEEE Transactions on Evolutionary Computation 18 (3) (2013) 348–365.).
 
-For example, if we already have dynamic networks list 
+For example, if we already have dynamic networks list, we can directly run code like: 
 
-`dynamic_network = [some Networkx-Graph objectives]
- tmoga_model = TMOGA(dynamic_network)
- solutions, solutions_population = tmoga_model.start()
-`
+```
+dynamic_network = [some Networkx-Graph objectives]
+tmoga_model = TMOGA(dynamic_network)
+solutions, solutions_population = tmoga_model.start()
+```
 
+where solutions variable is a list of best locus-based solutions, solutions_population variable is a list of all locus-based solutions.
+
+By using evaluation class, we can simply convert locus-based solutions to normal solutions:
+
+```
+ for i in range(len(solutions)):
+     communities = evaluation.parse_locus_solution(solutions[i])
+     print(communities)
+```
+
+At last, we get the final results for community detection in dynamic network.
 
 ## Disclaimer
 
