@@ -121,7 +121,7 @@ tmoga_model = TMOGA(dynamic_network)
 solutions, solutions_population = tmoga_model.start()
 ```
 
-where solutions variable is a list of best locus-based solutions, solutions_population variable is a list of all locus-based solutions.
+where `solutions` is a list of best locus-based solutions, `solutions_population` is a list of all locus-based solutions.
 
 By using evaluation class, we can simply convert locus-based solutions to normal solutions:
 
