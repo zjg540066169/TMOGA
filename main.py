@@ -13,7 +13,7 @@ import argparse
 
 
 
-from algorithm.TMOGA import TMOGA
+from tmoga.algorithm.TMOGA import TMOGA
 
 from tmoga.utils.file_parser import *
 from tmoga.utils.visualization import visualization
