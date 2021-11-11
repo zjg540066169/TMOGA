@@ -75,6 +75,8 @@ Some classic datasets of dynamic community detection problems are included in th
 It is worthwhile to note, the generating tool for SYN-EVENT datasets can be found at http://mlg.ucd.ie/dynamic/. The parameters for each dataset can found at such path: ./dataset/SYNEVENT/*/generation_parameters.txt.
 
 ## Usage
+
+### Command Line
 We list some datasets in common research above, and we can run command at the root directory to test TMOGA:
 
 `python3 ./main.py output -d dataset -g generation -p population  --CID cid  --Md md --Tp tp --Cp cp --Mp mp`
@@ -92,6 +94,32 @@ We list some datasets in common research above, and we can run command at the ro
 An example can be:
 
 `python3 ./main.py ./ -d synfix6 -g 20 -p 20  --CID 0.5  --Md 5 --Tp 0.5 --Cp 0.5 --Mp 0.2`
+
+### Python Library
+After installation from pip, we can import TMOGA algorithm and some evaluation functions in Python shell
+
+`from tmoga import TMOGA, evaluation`
+
+`TMOGA` is the main class for TMOGA algorithm, its parameters are as follows:
+
+* graph_list(required):  the input data, which is a list of Graph class in Networkx.
+* pop_size(default 150): the population size.
+* max_gen(default 50):   the number of generations in NSGA-II.
+* CID(default 0.5):      the CID threshold. More details are included in paper.
+* transfer_prob(default 0.9): the transfer probability of features obtained at last snapshot.
+* mutation_prob(default 0.9): the mutation probability of NSGA-II.
+* crossover_prob(default 0.9): the uniform crossover probability of NSGA-II.
+* max_num_cliques(default 5): the max depth of search tree. More details are included in paper.
+* first_round_generation(default None): the number of generations specified for the first network snapshot. Since TMOGA applies the ordinary NSGA-II framework without feature transfer mechanism at the first snapshot, we can specify more generations for the first network.
+* sde(default False): whether to use Shift-based Density Estimation Method to calculate crowding distance in NSGA-II (introduced in M. Li, S. Yang, X. Liu, Shift-based density estimation for pareto-based algorithms in manyobjective optimization, IEEE Transactions on Evolutionary Computation 18 (3) (2013) 348–365.).
+
+For example, if we already have dynamic networks list 
+
+`dynamic_network = [some Networkx-Graph objectives]
+ tmoga_model = TMOGA(dynamic_network)
+ solutions, solutions_population = tmoga_model.start()
+`
+
 
 ## Disclaimer
 
