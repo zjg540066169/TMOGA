@@ -10,7 +10,7 @@ import community
 import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
-from utils.evaluation import evaluation
+from tmoga.utils.evaluation import evaluation
 
 
 class visualization(object):

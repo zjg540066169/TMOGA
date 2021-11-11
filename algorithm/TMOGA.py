@@ -6,10 +6,10 @@ Run the algorithm TMOGA
 @date: 2018/06/11
 """
 
-from utils.NSGA2 import NSGA2
-from utils.evaluation import evaluation
-from utils.visualization import visualization
-from tmoga.Transfer_Initialization import Transfer_Initializer
+from tmoga.utils.NSGA2 import NSGA2
+from tmoga.utils.evaluation import evaluation
+from tmoga.utils.visualization import visualization
+from tmoga.algorithm.Transfer_Initialization import Transfer_Initializer
 from random import choice, randint
 import networkx as nx
 from tqdm import tqdm
@@ -154,16 +154,3 @@ class TMOGA:
                  X[i] = flag;
                  flag  = flag + 1;
         return X
-    
-if __name__ == "__main__":
-    from utils.file_parser import *
-    from utils.evaluation import evaluation
-    from utils.synthetic import *
-    g4, label4 = syntetic_event_dynamic_graph("../dataset/syntetic_event/merge_split", start = 1)
-    
-    #TI = Transfer_Initializer(g4[1], g4[0], label4[0], CID = 0.8, transfer_prob = 0.5)
-    for i in range(len(g4)):
-        a = __lp_init(g4[i], 200)
-        index = sorted(range(len(a)), key = lambda x:evaluation.NMI_with_Truth(label4[i], a[x]),reverse = True)[:20]
-        nmi = list(map(lambda x:evaluation.NMI_with_Truth(label4[i], a[x]), index))
-        print(np.mean(nmi))

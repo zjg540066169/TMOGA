@@ -9,7 +9,7 @@ import community
 import matplotlib.pyplot as plt
 import networkx as nx
 import math
-import utils.disjoint_set as djs
+import tmoga.utils.disjoint_set as djs
 import numpy as np
 from sklearn.metrics import adjusted_rand_score
 from random import choice, uniform

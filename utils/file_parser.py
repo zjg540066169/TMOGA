@@ -10,7 +10,7 @@ import numpy as np
 import networkx as nx
 import os
 import pandas as pd
-from utils.evaluation import evaluation
+from tmoga.utils.evaluation import evaluation
 def syntetic_read_edgelist(filename,weighted = False, return_graph = False, start = 0):
     idmap = set()
     edge_cache = {}

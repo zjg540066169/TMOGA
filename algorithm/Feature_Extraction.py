@@ -6,7 +6,7 @@ Extract transfered feature in communities. (feature extraction)
 @date: 2018/05/10
 """
 import networkx as nx
-from utils.evaluation import evaluation
+from tmoga.utils.evaluation import evaluation
 import multiprocessing
 from joblib import Parallel, delayed
 
@@ -97,28 +97,3 @@ class Clique_Discover(object):
             return clique_max
         else:
             return []
-                
-                
-    
-    
-    
-    
-    
-        
-
-# =============================================================================
-# if __name__=='__main__':
-#     from utils.evaluation import evaluation
-#     from networkx.algorithms import community
-#     from utils.visualization import visualization
-#     g = nx.karate_club_graph()
-#     communities_generator = community.girvan_newman(g)
-#     top_level_communities = next(communities_generator)
-#     next_level_communities = next(communities_generator)
-#     clusters = sorted(map(sorted, next_level_communities))
-#     a = Clique_Discover.clique_discover(g, clusters, CID = 1, max_num_cliques = 5)
-#     print(a)
-#     visualization.visualize_cliques(g, a)
-#     
-# =============================================================================
-   

@@ -13,11 +13,11 @@ import argparse
 
 
 
-from tmoga.TMOGA import TMOGA
+from algorithm.TMOGA import TMOGA
 
-from utils.file_parser import *
-from utils.visualization import visualization
-from utils.evaluation import evaluation
+from tmoga.utils.file_parser import *
+from tmoga.utils.visualization import visualization
+from tmoga.utils.evaluation import evaluation
 
 
 

@@ -6,14 +6,14 @@ Run the algorithm NSGA2
 @date: 2018/06/02
 """
 
-from utils.evaluation import evaluation
+from tmoga.utils.evaluation import evaluation
 import networkx as nx
 import math
 import random
 import matplotlib.pyplot as plt
 import numpy as np
 from random import choice, choices
-from utils.SDE import SDE
+from tmoga.utils.SDE import SDE
 import math
 import time
 

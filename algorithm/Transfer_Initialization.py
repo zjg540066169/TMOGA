@@ -5,10 +5,10 @@ Produce the initial solution of algorithm TMOGA (feature migration)
 @auth: Jungang Zou
 @date: 2018/05/12
 """
-from tmoga.Feature_Extraction import Clique_Discover
-from utils.evaluation import evaluation
-from utils.visualization import visualization
-from utils.disjoint_set import disjoint_set
+from tmoga.algorithm.Feature_Extraction import Clique_Discover
+from tmoga.utils.evaluation import evaluation
+from tmoga.utils.visualization import visualization
+from tmoga.utils.disjoint_set import disjoint_set
 
 import numpy as np
 import networkx as nx
@@ -167,53 +167,4 @@ class Transfer_Initializer:
                  X[i] = flag;
                  flag  = flag + 1;
         return X
-
-if __name__ == "__main__":
-    from utils.file_parser import *
-    from utils.evaluation import evaluation
-    from utils.synthetic import *
-    g4, label4 = syntetic_event_dynamic_graph("../dataset/syntetic_event/birth_death", start = 1)
-    
-    for current in range(1, len(g4)):
-        b = label4[current - 1]
-    # =============================================================================
-    #     c = [-1 for i in range(np.max(g4[current].nodes()) + 1)]
-    #     for key in b.keys():
-    #         for index in b[key]:
-    #             c[index] = key
-    #     c = evaluation.direct_to_locus(g4[current], c)
-    # =============================================================================
-        b = list(b.values())
-        TI = Transfer_Initializer(g4[current], g4[current - 1], b, CID = 0.8, transfer_prob = 0.5)
-        a = TI.start(200, locus = False)
-        index = sorted(range(len(a)), key = lambda x:evaluation.NMI_with_Truth(label4[0], a[x]),reverse = True)[:20]
-        nmi = list(map(lambda x:evaluation.NMI_with_Truth(label4[current], a[x]), index))
-        print(np.mean(nmi))
-#if __name__ == '__main__':
-# =============================================================================
-#     from compared_algorithm.DYNMOGA import DYNMOGA
-#     G2= nx.karate_club_graph()
-#     G1=nx.karate_club_graph()
-#     G1.add_edge(0,1) 
-#     G1.add_edge(0,2) 
-#     G1.add_edge(1,3) 
-#     G1.add_edge(0,3)
-#     G1.add_edge(2,3)
-#     G1.add_edge(2,1)
-#     dynmoga =  DYNMOGA([G2], 50, 10)
-#     pop_solutions = dynmoga.start()[0]
-# 
-#     
-#     GI = Transfer_Initializer(G2,G1,pop_solutions , transfer_prob = 0.6, max_num_cliques = 5)
-#     solution = GI.start(100)
-#     print(evaluation.Modularity(G1,solution[0]))
-#     print(evaluation.NMI(pop_solutions,solution[0],G2,G1))
-#     visualization.visualize_locus_solution(G1,solution[0])
-# =============================================================================
-#    GI = Transfer_Initializer(g[1], g[0], pop_solutions_dynmoga[0] , transfer_prob = 0.5, max_num_cliques = 5)
-#    solution1 = GI.start(1)
-    #GI = Transfer_Initializer(g[1],  transfer_prob = 0.5, max_num_cliques = 5)
-    #solution0 = GI.start(1)    
-#GI = Transfer_Initializer(g[1], g[0], pop_solutions_dynmoga[0] , transfer_prob = 0.5, max_num_cliques = 5)
-#solution1 = GI.start(1)
 
