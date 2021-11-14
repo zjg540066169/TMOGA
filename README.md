@@ -116,7 +116,7 @@ After installation from pip, we can import TMOGA algorithm and some evaluation f
 For example, if we already have dynamic networks list, we can directly run code like: 
 
 ```
-dynamic_network = [some Networkx-Graph objectives]
+dynamic_network = [some Networkx-Graph objects]
 tmoga_model = TMOGA(dynamic_network)
 solutions, solutions_population = tmoga_model.start()
 ```
