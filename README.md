@@ -1,4 +1,4 @@
-# TMOGA
+# TMOGA for Dynamic Community Detection Problem
 
 TMOGA(feature Transfer based Multi-Objective Genetic algorithm) is a multi-objective genetic algorithm to solve community detection problem on dynamic networks. The whole algorithm is written by Python, which takes a list of Graph class from Networkx as input and a list of final community partitions as output.
 
