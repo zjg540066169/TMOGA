@@ -134,7 +134,40 @@ By using evaluation class, we can simply convert locus-based solutions to normal
 At last, we get the final results for community detection in dynamic network.
 
 #### Visualization
-This package provides some visualization functions for dynamic network in 
+This package provides some visualization functions for dynamic network in /tmoga/utils/visualization.py. 
+
+To visualize the locus-encoding solutions obtained by TMOGA, we can run codes like:
+```
+ from tmoga.utils.visualization import visualization
+ for i in range(len(solutions)):
+     visualization.visualize_locus_solution(dynamic_network[i], solutions[i], node_label = False)
+```
+
+To visualize the direct-encoding solutions obtained by other algorithms, we can run codes like:
+```
+ from tmoga.utils.visualization import visualization
+ from tmoga.utils.evaluation import evaluation
+ 
+ # convert locus-encoding solution to direct-enncoding solution by using 'evaluation' class
+ direct_0 = evaluation.locus_to_direct(solutions[0])
+ visualization.visualize_direct_solution(dynamic_network[0], direct_0, node_label = True)
+```
+
+To visualize the cliques obtained for the first graph, we can run codes like:
+``` 
+ from tmoga.utils.visualization import visualization
+ cliques = tmoga_model.get_cliques()
+ visualization.visualize_cliques(dynamic_network[0], cliques[0])
+```
+
+To visualize the initial solutions obtained by feature transfer, we can run codes like:
+``` 
+ from tmoga.utils.visualization import visualization
+ init_pop = tmoga_model.get_initial_populations()
+ for i in range(len(init_pop)):
+     visualization.visualize_locus_solution(dynamic_network[i], init_pop[i][0], node_label = False)
+```
+
 
 
 ## Disclaimer
