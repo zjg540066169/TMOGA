@@ -133,6 +133,10 @@ By using evaluation class, we can simply convert locus-based solutions to normal
 
 At last, we get the final results for community detection in dynamic network.
 
+#### Visualization
+This package provides some visualization functions for dynamic network in 
+
+
 ## Disclaimer
 
 If you find there is any bug, please contact me: jungang.zou@gmail.com.
