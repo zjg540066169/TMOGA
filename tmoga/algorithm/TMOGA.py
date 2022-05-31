@@ -54,13 +54,20 @@ class TMOGA:
         return population
     
 
-                    
+    def get_cliques(self):
+        return self.clique_list
+    
+    def get_initial_populations(self):
+        return self.initial_population
+        
 
     def start(self):
         transfer_time = 0
         part_solution = []
         solution_pop = []
         #1st round
+        self.clique_list = []
+        self.initial_population = []
         
         #next round
         for i in tqdm(range(len(self.graph_list))):
@@ -68,6 +75,7 @@ class TMOGA:
                 #init_pop = self.__random_init(self.graph_list[i],self.pop_size)
                 init_pop = self.__lp_init(self.graph_list[i],self.pop_size)
                 #init_pop = sorted(init_pop, key = lambda x:self.evaluation(self.graph_list[i], x), reverse = True)[:self.pop_size]
+                self.initial_population.append(init_pop)
                 NG2 = NSGA2(evaluation.Modularity, init_pop, self.graph_list[i],max_gen = self.first_round_generation, mutation_prob = self.mutation_prob, crossover_prob = self.crossover_prob, sde = self.sde)
                 solution = NG2.start()
                 solution_values =  [self.__evaluate_solution(self.graph_list[i],solution[k]) for k in range(len(solution))]
@@ -82,7 +90,8 @@ class TMOGA:
                 init_pop = transfer_init.start(self.pop_size)
                 end = time.time()
                 transfer_time += (end - start)
-                
+                self.clique_list.append(transfer_init.get_cliques())
+                self.initial_population.append(init_pop)
                 #init_pop = sorted(init_pop, key = lambda x : self.__evaluate_solution(self.graph_list[i],x), reverse = False)
                     #visualization.visualize_locus_solution(self.graph_list[i], init_pop[0])
                     

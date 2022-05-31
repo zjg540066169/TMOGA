@@ -21,8 +21,6 @@ from tmoga.utils.evaluation import evaluation
 
 
 
-
-
 if __name__ == '__main__':
     random.seed(123)
     
@@ -134,4 +132,24 @@ if __name__ == '__main__':
     print("The solutions are saved at: " + directory + "/")
     write_locus(pop_solutions_tmoga, directory)
     
+
+    # visualization
+    # visualize locus solutions for each graph
+    for i in range(len(pop_solutions_tmoga)):
+        visualization.visualize_locus_solution(g[i], pop_solutions_tmoga[i], node_label = False)
+        
     
+    # visualize direct solutions
+    # convert locus-encoding solution to direct-enncoding solution
+    direct_0 = evaluation.locus_to_direct(pop_solutions_tmoga[0])
+    visualization.visualize_direct_solution(g[0], direct_0, node_label = True)
+    
+    
+    # visualize cliques
+    cliques = tmoga.get_cliques()
+    visualization.visualize_cliques(g[0], cliques[0])
+    
+    # visualize initial solution for each graph
+    init_pop = tmoga.get_initial_populations()
+    for i in range(len(init_pop)):
+        visualization.visualize_locus_solution(g[i], init_pop[i][0], node_label = False)

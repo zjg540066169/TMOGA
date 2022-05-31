@@ -24,6 +24,11 @@ class Transfer_Initializer:
         self.CID = CID
         self.transfer_prob = transfer_prob
         self.max_num_cliques = max_num_cliques
+        self.cliques = None
+        
+        
+    def get_cliques(self):
+        return self.cliques
        
 
     def __feature_extract(self, locus = True):
@@ -80,6 +85,7 @@ class Transfer_Initializer:
             return population
         
         transfer_node_list = self.__feature_extract(locus)
+        self.cliques = transfer_node_list
         #visualization.visualize_cliques(self.graph, transfer_node_list)
         #print(transfer_node_list)
         #visualization.visualize_cliques(self.previous_graph, transfer_node_list)

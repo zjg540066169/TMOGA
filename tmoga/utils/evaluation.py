@@ -99,6 +99,12 @@ class evaluation:
                     locus_solution.append(min(list(candidate)))
         return locus_solution
     
+    
+    @classmethod
+    def locus_to_direct(self, locus_solution):
+        community_to_nodes = self.parse_locus_solution(locus_solution)
+        return self.community_node_to_direct(community_to_nodes)
+    
     @classmethod
     def community_node_to_direct(self, community_node):
         node_community = self.community_nodes_to_node_community(community_node)

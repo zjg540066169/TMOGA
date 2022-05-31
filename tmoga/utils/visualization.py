@@ -18,31 +18,21 @@ class visualization(object):
         pass
     
     @classmethod
-    def visualize_population(self, graph, population, last_graph = None, last_solution = None ):
-        x = [evaluation.Modularity(graph, i) for i in population]
-        if last_solution is None:
-            y = [0] * len(population)
-        else:
-            y = [evaluation.NMI(i, last_solution, graph, last_graph) for i in population]
-        plt.scatter(x, y)
-        plt.show()
-    
-    @classmethod
-    def visualize_locus_solution(self, graph, locus_solution):
-        # visualize community on graph
+    def visualize_locus_solution(self, graph, locus_solution, node_label = False):
+        # visualize locus solutions on graph
         part = evaluation.parse_locus_solution(locus_solution)
         community_part = evaluation.community_nodes_to_node_community(part)
         values = [community_part.get(node) for node in graph.nodes()] 
-        nx.draw(graph, cmap=plt.get_cmap('viridis'), node_color = values, node_size=100, with_labels=False,alpha = 0.8, pos = nx.spring_layout(graph, k=0.5 , seed = 123),width = 0.3, font_color='white') 
+        nx.draw(graph, cmap=plt.get_cmap('viridis'), node_color = values, node_size=100, with_labels=node_label,alpha = 0.8, pos = nx.spring_layout(graph, k=0.5 , seed = 123),width = 0.3, font_color='white') 
         plt.show()
         
     @classmethod
-    def visualize_direct_solution(self, graph, direct_solution):
-        # visualize community on graph
+    def visualize_direct_solution(self, graph, direct_solution, node_label = False):
+        # visualize direct solutions on graph
         part = evaluation.parse_direct_solution(direct_solution)
         community_part = evaluation.community_nodes_to_node_community(part)
         values = [community_part.get(node) for node in graph.nodes()] 
-        nx.draw(graph, cmap=plt.get_cmap('viridis'), node_color = values, node_size=100, with_labels=True, pos = nx.spring_layout(graph, seed = 123), font_color='white') 
+        nx.draw(graph, cmap=plt.get_cmap('viridis'), node_color = values, node_size=100, with_labels=node_label, alpha = 0.8, pos = nx.spring_layout(graph,k=0.5 , seed = 123),width = 0.3, font_color='white') 
         plt.show()
         
     @classmethod
@@ -59,7 +49,7 @@ class visualization(object):
         
     @classmethod
     def visualize_cliques(self, graph, cliques):
-        # visualize community on graph
+        # visualize cliques on graph
         part = {}
         nx.draw(graph, node_size=100, node_color = "black", with_labels=False,  pos = nx.spring_layout(graph, k=0.5 , seed = 123),width = 0.3,font_color='white', alpha = 0.8)
         for i in range(len(cliques)):
@@ -137,4 +127,17 @@ class visualization(object):
         plt.plot(x, y, label = name)
         if one_plot:
             plt.show()
+            
+            
+            
+    @classmethod
+    def visualize_population(self, graph, population, last_graph = None, last_solution = None ):
+        # dotplot for modularity and NMI for the whole population
+        x = [evaluation.Modularity(graph, i) for i in population]
+        if last_solution is None:
+            y = [0] * len(population)
+        else:
+            y = [evaluation.NMI(i, last_solution, graph, last_graph) for i in population]
+        plt.scatter(x, y)
+        plt.show()
         
