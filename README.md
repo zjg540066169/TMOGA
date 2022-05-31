@@ -133,7 +133,9 @@ By using evaluation class, we can simply convert locus-based solutions to normal
 
 At last, we get the final results for community detection in dynamic network.
 
-#### Visualization
+
+
+### Visualization
 This package provides some visualization functions for dynamic network in /tmoga/utils/visualization.py. 
 
 To visualize the locus-encoding solutions obtained by TMOGA, we can run codes like:
