@@ -244,7 +244,7 @@ class evaluation:
         # calculate community score
         def score(community):
             #  calculate score for each community
-            adj = nx.adj_matrix(graph, nodelist = community).todense()
+            adj = nx.adjacency_matrix_matrix(graph, nodelist = community).todense()
             first_term = np.power(adj.mean(1), order).mean()
             second_term = adj.sum()
             return first_term * second_term
@@ -258,7 +258,7 @@ class evaluation:
     
     @classmethod
     def community_CID(self, graph, c):
-        adj = nx.adj_matrix(graph, nodelist = c).todense()
+        adj = nx.adjacency_matrix_matrix(graph, nodelist = c).todense()
         return (adj.sum() - adj.trace()[0, 0]) / (len(c) * (len(c) - 1))
         
         
