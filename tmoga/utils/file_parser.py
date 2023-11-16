@@ -161,7 +161,7 @@ def syntetic_event_dynamic_graph(directory, truth = True, start = 1):
 
 def write_locus(pop_solutions_tmoga, directory):
     for i in range(len(pop_solutions_tmoga)):
-        path = directory  + "/" + str(i)
+        path = directory  + "/" + str(i) + ".comm"
         node_community = evaluation.community_nodes_to_node_community(evaluation.parse_locus_solution(pop_solutions_tmoga[i]))
         sorted_answer = sorted(node_community.items(), key = lambda x:x[0])
         with open(path, "w") as f:
