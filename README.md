@@ -11,7 +11,7 @@ For more details on the algorithm and its applications, please consult the follo
 
 You can install this package from pip with
 
-`pip install tmoga=0.14.0`
+`pip install tmoga==0.14.0`
 
 
 ## Requirement
